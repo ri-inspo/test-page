@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="path/to.css" type="text/css">
+    <link rel="alternate stylesheet" href="path/to/style.css" title="yourTitle">
+    <link rel="icon" type="image/png" href="/home/ritvik/Downloads/r.png">
+    <link rel="stylesheet" href="test.css" media="print">
+    <link rel="prev" href="/0.html">
+    <link rel="next" href="/2.html">
+    <title>Hello</title>
+    <!-- <style type="text/css">@import("path/to.css")</style> could be used instead of the link tag. the link tag can be used wthout the 'type' attribute, and the result would be the same in html5 as html5 usually supports css. the second link tag is an alternate stylesheet. some browsers allow this to be applied and can be toggled in the settings. type should be changed to "image/x-icon" if used with a .ico file. a file named favicon.ico at the root of your website will typically be loaded and applied automatically, without theneed for a <link> tag. If this file ever changes, browsers can be slow and stubborn about updating their cache. -->
+  </head>
+  <body>
+  <div class="basics">
+    <h1>Hello World</h1>
+    <!-- font sizes exist from h1 to h6 where h1>h6 -->
+    <h2>Index</h2>
+      <a href="#prgph-highlighted">A paragraph with highlighted text.</a>
+      <a href="1.html#txt-frmt">Types of text formatting.</a>
+    <!-- 1.html references the page on which the anchor is present -->
+    <br>
+    <p id="prgph-highlighted">This is a <mark>paragraph.</mark></p>
+  </div>
+
+    <br>
+
+  <div class="txt-frmt">
+    <p id="txt-frmt">This is - <b>bold</b> <i>italic</i> <u>underlined</u> <em>emphazied</em> <strong>strong</strong> <sup>superscripted</sup> <sub>subscripted</sub> <abbr title="abbreviated">abv.</abbr> <ins>inserted</ins> <del>deleted</del> <s>struck-through.</s></p>
+    <!-- strong & em are distinguished from b & i through audio. in case of del and strike through, the word deleted is only visual while a word struck-through is removed when used with screen readers through audio. -->
+  </div>
+
+  <div class="anchors">
+    <a href="http://www.discord.com" rel="external">Discord.</a>
+    <br>
+    <!-- replacing http with ftp request the browser to use ftp to connect to website -->
+    <a href="http://www.discord.com/app" rel="external">Discord Web App.</a>
+    <br>
+    <!-- /app can be used solitarily if it is a relative path in the same server. here, this wouldnt work because this webpage is not hosted on the same server as discord.com -->
+    <a href="tel:15987">Silver's phone number.</a>
+    <br>
+    <!-- tel defines a phone number and clicking it would pull up a dialer -->
+    <a href="www.manjaro.com" target="_blank">Manjaro's website.</a>
+    <br>
+    <!-- _blank opens new tab/window as per user preference. _self, _parent, _top are other options. note: _blank gives the opening site partial acess to window.opener via js which would allow it to access and change the window.opener location,  possibly redirecting you to malware. therefore one should use rel="noopener" or re="noopner noreferrer" for maximum effect as "noopener" is not supported by firefox. -->
+    <a href="mailto:ri.inspo@gmail.com">Send me a mail.</a>
+    <!-- you can also populate subject and body by using: "mailto:example@example.com?subject=Example+subject&body=Message+text" but it must be URL encoded. note: not all options specified after the recipient's address are supported in all email clients. -->
+
+    <br>
+
+  <div class="tables">
+    <p>This is an ordered list.</p>
+    <ol type="1" start="1">
+    <li>HTML5</li>
+    <li value="99">CSS3</li>
+    </ol>
+    <!-- 'start' defines the starting number of the ordered list. 'value' defines an explicit value for a list item, the items following which, will use the same value as the start point, not considering the numbering system from the start. note: the start and value attributes only accept a number. 'type' defines the type of listing they can be of the following types: 1, a, A, i, I. -->
+    <p>This is an unordered list.</p>
+    <ul>
+      <li>Ice-cream</li>
+      <li>Candy</li>
+      <ul>
+        <li>NESTED?</li>
+        <li>Yes.</li>
+      </ul>
+      <li>Un-nested.</li>
+    </ul>
+    <!-- here, <ul> is inside a <ul> and is called a nested list. note: you can have a nested list of different types, ex: <ul> inside an <ol>. -->
+    <p>This is a description list.</p>
+    <dl>
+      <dt>SHA</dt>
+      <dd>256bit</dd>
+      <dt>BIOS</dt>
+      <dd>Legacy</dd>
+      <dd>UEFI<dd>
+      <dt>Vaporwave<dt>
+      <dt>Dark Academia</dt>
+      <dd>are A E S T H E T I C S</dd>
+    </dl>
+    <!-- you can have multiple <dt> [name] and <dd> [value] tags simultaneously. -->
+    <table>
+      <caption>Okay, so here are some fun pastels!</caption>
+      <colgroup span="2">
+        <col id="color-head"</col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col" id="#color-head">Name of color</th>
+          <th><sup>tm</sup></th>
+          <th scope+"col">Hex code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row" colspan="2">Thistle</td>
+            <td>#E0BBE4</td>
+            </tr>
+        <tr>
+            <td scope="row" colspan="2" rowspan="3">Ze Melon Color</td>
+            <td>#FFB7B2</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td scope="row" colspan="2">Mint</td>
+            <td>#B5EAD7</td>
+        </tr>
+    </tbody>
+    </tfoot>
+        <tr>
+            <td colspan="3"><sub><del>those were very fun colors weren't they?</del></sub></td>
+        </tr>
+    </tfoot>
+    </table>
+    <!-- rowspan and colspan attributes allow cell to span rows/columns. default value of this attribute is one (1). a value of zero (0) means that the cell will extend from the current row/column until the last row/column of the table. optional <col> tag allows you to reference individual columns or a range of columns without applying a logical grouping. <col> elements are optional, but if present, they must be inside a <colgroup> element. scope is an enumerated attribute having a specific set of possible values: row, col, colgoup and rowgroup. it is used to increase the accessibility of the headers of rows and columns [<th>]. -->
+  <div class="comments">
+    <h5>there are comments under this in the source code.</h5>
+    <!-- these are comments, found all across the the code. they are bassically notes about a specifc part of the code. they can be incorporated inline within another tag. how they wouldnt work when produced inside the tag, ex: <h2 <!- - comment>>. for compatibility with tools that try to parse HTML as XML or SGML, the body of your comment should not contain two dashes. comments can also ve used to avoid very long lines and unintentional white space like so: <a href="#">I hope there will be no extra whitespace after this!</a>[comment tag here]<button>Foo</button> -->
+  </div>
+  <div class="class&id">
+    <h5 class="class &classes">there are multiple classes associated with this message in the source code.</h5>
+    <!-- class attribute can be used on one or more tags and is used by CSS for styling. if an element needs to be given two classes, it is done as the above example. the same class can be given to various elements and they will all receive the styling associated with that class. this will always be true unless you specify the element within the CSS. -->
+    <br>
+    <h5 id="id">there is an id associated with this message in the source code.</h5>
+    <!-- the ID attribute of an element is an identifier which must be unique in the whole document. its purpose is touniquely identify the element when linking (using an anchor), scripting, or styling (with CSS). IDs are generally used with JavaScript and internal documentlinks, and are discouraged in CSS. to reference elements by their ID in CSS, prefix the ID with #. -->
+  </div>
+  <div class="rules-class&id"
+    <h5 id="sherlock-holmes">Sherlock has an ID. One:</h5>
+    <ul>
+      <li>that is unique</li>
+      <li>that does not contain any space characters</li>
+      <li>that contains at least one character</li>
+    </ul>
+    <h5 class="class&id">Laura Class has a--<br>you guessed it, a class in her name. One:</h5>
+    <ul>
+      <li>similar to sherlock's ID..?</li>
+      <li>except that it's not unique.</li>
+    </ul>
+    <!-- so the value can be all digits, just one digit, just punctuation characters, include special characters, whatever. just no whitespace. using numbers, punctuation or special characters in the value of an id or a class may cause trouble in othercontexts, such as CSS, JavaScript and regular expressions. using more than one element with the same ID is a hard to troubleshoot problem. the HTML parser will usually try to render the page in any case. Usually no error occurs. but the pace could end up in a mis-behaving web page. [note: css selectors would still work, but js fails to handle both elements and outputs the first one]. -->
+  </div>
+
+  <script src="path/to.js"></script>
+  <script src="path/to.js" async></script>
+  <script src="path/to.js" defer></script>
+  <noscript></noscript>
+  </body>
+</html>
